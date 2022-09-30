@@ -1,16 +1,7 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <ctype.h>
-#include <string.h>
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <fcntl.h>
-#include <unistd.h>
 #include "LOG.h"
-#include <stdlib.h>
 #include <malloc.h>
 #include "stack_config.h"
-#include <assert.h>
 
 #define ASSERT(condition)                                       \
     if (!(condition)){                                           \
@@ -27,18 +18,12 @@
 #define StackDump(stk) \
     StackDumpFunc(stk, __LINE__, __FILE__, __PRETTY_FUNCTION__)
 
-#define ASSERT_OK(stk)                                        \
+#define ASSERT_OK(stk)                                                                \
     if (StackVerify(stk) != STACK_STATUS_OK &&  (StackIsEmpty(stk) != STACK_IS_EMPTY)) \
-    {                                                           \
-        StackDump(stk);                                          \
-        ASSERT(0 && "Crashed stack")                              \
-    }                                                              \
-
-#define StackHash(stk) \
-    HashCalculate((char*) stk, sizeof(Stack_t))
-
-#define StackDataHash(stk) \
-    HashCalculate((char*) stk->data, stk->capacity  * sizeof(Elem_t))
+    {                                                                                   \
+        StackDump(stk);                                                                  \
+        ASSERT(0 && "Crashed stack")                                                      \
+    }                                                                                      
 
 void print(int param);
 void print(char param);
@@ -74,12 +59,11 @@ enum StackStatus
     STACK_DATA_IS_RUINED           = 1 << 15
 };
 
-
 struct Stack_t
 {   
     unsigned long long  leftCanary;
     Elem_t*             data; 
-    unsigned long long* dataLeftCanary; // can be moved to function
+    unsigned long long* dataLeftCanary; 
     unsigned long long* dataRightCanary;
     size_t              size;
     size_t              capacity;
@@ -94,30 +78,18 @@ struct Stack_t
 enum CapacityMode {UP, DOWN};
 
 Elem_t*     StackResize(Stack_t* stk, CapacityMode capMode);
-
-Stack_t*    StackCtorFunc(Stack_t* stk, size_t capacity, const char name[MAX_STR_SIZE], size_t line, const char file[MAX_STR_SIZE], const char func[MAX_STR_SIZE]); // _ in the end
-
+Stack_t*    StackCtorFunc(Stack_t* stk,  size_t     capacity,           const char name[MAX_STR_SIZE], 
+                          size_t   line, const char file[MAX_STR_SIZE], const char func[MAX_STR_SIZE]); 
 StackStatus StackDtor(Stack_t* stk);
-
 StackStatus StackPush(Stack_t* stk, Elem_t value);
-
 Elem_t      StackPop(Stack_t* stk);
-
 void        StackDumpFunc(Stack_t* stk, size_t line, const char file[MAX_STR_SIZE], const char func[MAX_STR_SIZE]);
-
 int         StackVerify(Stack_t *stk);
-
 StackStatus StackIsDestructed(Stack_t *stk);
-
 StackStatus StackIsEmpty(Stack_t *stk);
-
 void        fillPoison(Stack_t* stk);
-
 size_t      HashCalculate(char* key, size_t len);
-
 StackStatus HashCheck(Stack_t* stk);
-
 StackStatus SetHash(Stack_t* stk);
-
 size_t      SetStackHash(Stack_t* stk);
-size_t SetStackDataHash(Stack_t* stk);
+size_t      SetStackDataHash(Stack_t* stk);

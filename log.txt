@@ -1427,3 +1427,1086 @@ Stack status:
 }
 
 ---------------------------------------------------------------------------
+---------------------------Started logging---------------------------------
+DATE: 30-09-2022
+TIME: 11:34:24
+
+---------------------------StackDump---------------------------------------
+Called at main.cpp at int main()(10)
+Stack[0x7ffd5fe42280] <&stk1> at int main() at main.cpp(9)
+Stack status:
+>>>Stack is OK
+{
+    STACK HASH:  c30d553028e55f02    STACK DATA HASH: c2f896ca964dbaab
+    LEFT CANARY: baadf00d   RIGHT CANARY: f00dbaad
+    data pointer = 0x606000000028
+    size         = 0
+    capacity     = 10
+    DATA LEFT CANARY: deadbeef   DATA RIGHT CANARY: beefdead
+    {
+	 [0] = 31415926 (POISON)
+	 [1] = 31415926 (POISON)
+	 [2] = 31415926 (POISON)
+	 [3] = 31415926 (POISON)
+	 [4] = 31415926 (POISON)
+	 [5] = 31415926 (POISON)
+	 [6] = 31415926 (POISON)
+	 [7] = 31415926 (POISON)
+	 [8] = 31415926 (POISON)
+	 [9] = 31415926 (POISON)
+    }
+}
+
+---------------------------------------------------------------------------
+
+---------------------------StackDump---------------------------------------
+Called at main.cpp at int main()(13)
+Stack[0x7ffd5fe42280] <&stk1> at int main() at main.cpp(9)
+Stack status:
+>>>Stack is OK
+{
+    STACK HASH:  a1a1eedc9e864666    STACK DATA HASH: 5cc94ccf0e135f84
+    LEFT CANARY: baadf00d   RIGHT CANARY: f00dbaad
+    data pointer = 0x606000000028
+    size         = 1
+    capacity     = 10
+    DATA LEFT CANARY: deadbeef   DATA RIGHT CANARY: beefdead
+    {
+	*[0] = 228
+	 [1] = 31415926 (POISON)
+	 [2] = 31415926 (POISON)
+	 [3] = 31415926 (POISON)
+	 [4] = 31415926 (POISON)
+	 [5] = 31415926 (POISON)
+	 [6] = 31415926 (POISON)
+	 [7] = 31415926 (POISON)
+	 [8] = 31415926 (POISON)
+	 [9] = 31415926 (POISON)
+    }
+}
+
+---------------------------------------------------------------------------
+
+---------------------------StackDump---------------------------------------
+Called at main.cpp at int main()(19)
+Stack[0x7ffd5fe42280] <&stk1> at int main() at main.cpp(9)
+Stack status:
+>>>Stack is OK
+{
+    STACK HASH:  1b9a9277b312c70b    STACK DATA HASH: 2560e0d85faeda77
+    LEFT CANARY: baadf00d   RIGHT CANARY: f00dbaad
+    data pointer = 0x60f000000048
+    size         = 26
+    capacity     = 40
+    DATA LEFT CANARY: deadbeef   DATA RIGHT CANARY: beefdead
+    {
+	*[0] = 228
+	*[1] = 0
+	*[2] = 1
+	*[3] = 2
+	*[4] = 3
+	*[5] = 4
+	*[6] = 5
+	*[7] = 6
+	*[8] = 7
+	*[9] = 8
+	*[10] = 9
+	*[11] = 10
+	*[12] = 11
+	*[13] = 12
+	*[14] = 13
+	*[15] = 14
+	*[16] = 15
+	*[17] = 16
+	*[18] = 17
+	*[19] = 18
+	*[20] = 19
+	*[21] = 20
+	*[22] = 21
+	*[23] = 22
+	*[24] = 23
+	*[25] = 24
+	 [26] = 31415926 (POISON)
+	 [27] = 31415926 (POISON)
+	 [28] = 31415926 (POISON)
+	 [29] = 31415926 (POISON)
+	 [30] = 31415926 (POISON)
+	 [31] = 31415926 (POISON)
+	 [32] = 31415926 (POISON)
+	 [33] = 31415926 (POISON)
+	 [34] = 31415926 (POISON)
+	 [35] = 31415926 (POISON)
+	 [36] = 31415926 (POISON)
+	 [37] = 31415926 (POISON)
+	 [38] = 31415926 (POISON)
+	 [39] = 31415926 (POISON)
+    }
+}
+
+---------------------------------------------------------------------------
+
+---------------------------StackDump---------------------------------------
+Called at main.cpp at int main()(25)
+Stack[0x7ffd5fe42280] <&stk1> at int main() at main.cpp(9)
+Stack status:
+>>>Stack is OK
+{
+    STACK HASH:  d82d8adcfa878cae    STACK DATA HASH: 965d2e77ef940748
+    LEFT CANARY: baadf00d   RIGHT CANARY: f00dbaad
+    data pointer = 0x60f000000048
+    size         = 16
+    capacity     = 40
+    DATA LEFT CANARY: deadbeef   DATA RIGHT CANARY: beefdead
+    {
+	*[0] = 228
+	*[1] = 0
+	*[2] = 1
+	*[3] = 2
+	*[4] = 3
+	*[5] = 4
+	*[6] = 5
+	*[7] = 6
+	*[8] = 7
+	*[9] = 8
+	*[10] = 9
+	*[11] = 10
+	*[12] = 11
+	*[13] = 12
+	*[14] = 13
+	*[15] = 14
+	 [16] = 31415926 (POISON)
+	 [17] = 31415926 (POISON)
+	 [18] = 31415926 (POISON)
+	 [19] = 31415926 (POISON)
+	 [20] = 31415926 (POISON)
+	 [21] = 31415926 (POISON)
+	 [22] = 31415926 (POISON)
+	 [23] = 31415926 (POISON)
+	 [24] = 31415926 (POISON)
+	 [25] = 31415926 (POISON)
+	 [26] = 31415926 (POISON)
+	 [27] = 31415926 (POISON)
+	 [28] = 31415926 (POISON)
+	 [29] = 31415926 (POISON)
+	 [30] = 31415926 (POISON)
+	 [31] = 31415926 (POISON)
+	 [32] = 31415926 (POISON)
+	 [33] = 31415926 (POISON)
+	 [34] = 31415926 (POISON)
+	 [35] = 31415926 (POISON)
+	 [36] = 31415926 (POISON)
+	 [37] = 31415926 (POISON)
+	 [38] = 31415926 (POISON)
+	 [39] = 31415926 (POISON)
+    }
+}
+
+---------------------------------------------------------------------------
+
+---------------------------StackDump---------------------------------------
+Called at main.cpp at int main()(27)
+Stack[0x7ffd5fe42280] <&stk1> at int main() at main.cpp(9)
+Stack status:
+>>>Stack is OK
+{
+    STACK HASH:  bd0a99efef35f2aa    STACK DATA HASH: a057ccfebe0e7244
+    LEFT CANARY: baadf00d   RIGHT CANARY: f00dbaad
+    data pointer = 0x6080000000a8
+    size         = 15
+    capacity     = 20
+    DATA LEFT CANARY: deadbeef   DATA RIGHT CANARY: beefdead
+    {
+	*[0] = 228
+	*[1] = 0
+	*[2] = 1
+	*[3] = 2
+	*[4] = 3
+	*[5] = 4
+	*[6] = 5
+	*[7] = 6
+	*[8] = 7
+	*[9] = 8
+	*[10] = 9
+	*[11] = 10
+	*[12] = 11
+	*[13] = 12
+	*[14] = 13
+	 [15] = 31415926 (POISON)
+	 [16] = 31415926 (POISON)
+	 [17] = 31415926 (POISON)
+	 [18] = 31415926 (POISON)
+	 [19] = 31415926 (POISON)
+    }
+}
+
+---------------------------------------------------------------------------
+
+---------------------------StackDump---------------------------------------
+Called at main.cpp at int main()(30)
+Stack[0x7ffd5fe42280] <&stk1> at int main() at main.cpp(9)
+Stack status:
+>>>Stack is OK
+{
+    STACK HASH:  f144aed8a28f4123    STACK DATA HASH: b6a46494b7e04343
+    LEFT CANARY: baadf00d   RIGHT CANARY: f00dbaad
+    data pointer = 0x6080000000a8
+    size         = 14
+    capacity     = 20
+    DATA LEFT CANARY: deadbeef   DATA RIGHT CANARY: beefdead
+    {
+	*[0] = 228
+	*[1] = 0
+	*[2] = 1
+	*[3] = 2
+	*[4] = 3
+	*[5] = 4
+	*[6] = 5
+	*[7] = 6
+	*[8] = 7
+	*[9] = 8
+	*[10] = 9
+	*[11] = 10
+	*[12] = 11
+	*[13] = 12
+	 [14] = 31415926 (POISON)
+	 [15] = 31415926 (POISON)
+	 [16] = 31415926 (POISON)
+	 [17] = 31415926 (POISON)
+	 [18] = 31415926 (POISON)
+	 [19] = 31415926 (POISON)
+    }
+}
+
+---------------------------------------------------------------------------
+
+---------------------------StackDump---------------------------------------
+Called at main.cpp at int main()(34)
+Stack[0x7ffd5fe42280] <&stk1> at int main() at main.cpp(9)
+Stack status:
+		!!!STACK'S DATA IS RUINED!!!
+>>>Stack data's left canary is ruined
+{
+    STACK HASH:  94d10f18203a7f7d    STACK DATA HASH: b6a46494b7e04343
+    LEFT CANARY: baadf00d   RIGHT CANARY: f00dbaad
+    data pointer = 0x6080000000a8
+    size         = 14
+    capacity     = 20
+    DATA LEFT CANARY: 316a17   DATA RIGHT CANARY: beefdead
+    {
+	*[0] = 228
+	*[1] = 0
+	*[2] = 1
+	*[3] = 2
+	*[4] = 3
+	*[5] = 4
+	*[6] = 5
+	*[7] = 6
+	*[8] = 7
+	*[9] = 8
+	*[10] = 9
+	*[11] = 10
+	*[12] = 11
+	*[13] = 12
+	 [14] = 31415926 (POISON)
+	 [15] = 31415926 (POISON)
+	 [16] = 31415926 (POISON)
+	 [17] = 31415926 (POISON)
+	 [18] = 31415926 (POISON)
+	 [19] = 31415926 (POISON)
+    }
+}
+
+---------------------------------------------------------------------------
+
+---------------------------StackDump---------------------------------------
+Called at main.cpp at int main()(37)
+Stack[0x7ffd5fe42280] <&stk1> at int main() at main.cpp(9)
+Stack status:
+		!!!STACK'S DATA IS RUINED!!!
+>>>Stack's right canary is ruined
+>>>Stack data's left canary is ruined
+>>>Stack's hash is ruined
+{
+    STACK HASH:  49cd1ed435fb34cf    STACK DATA HASH: b6a46494b7e04343
+    LEFT CANARY: baadf00d   RIGHT CANARY: 912
+    data pointer = 0x6080000000a8
+    size         = 14
+    capacity     = 20
+    DATA LEFT CANARY: 316a17   DATA RIGHT CANARY: beefdead
+    {
+	*[0] = 228
+	*[1] = 0
+	*[2] = 1
+	*[3] = 2
+	*[4] = 3
+	*[5] = 4
+	*[6] = 5
+	*[7] = 6
+	*[8] = 7
+	*[9] = 8
+	*[10] = 9
+	*[11] = 10
+	*[12] = 11
+	*[13] = 12
+	 [14] = 31415926 (POISON)
+	 [15] = 31415926 (POISON)
+	 [16] = 31415926 (POISON)
+	 [17] = 31415926 (POISON)
+	 [18] = 31415926 (POISON)
+	 [19] = 31415926 (POISON)
+    }
+}
+
+---------------------------------------------------------------------------
+
+---------------------------StackDump---------------------------------------
+Called at main.cpp at int main()(40)
+Stack[0x7ffd5fe42280] <&stk1> at int main() at main.cpp(9)
+Stack status:
+>>>Stack is destructed
+{
+    STACK HASH:  deadbabe    STACK DATA HASH: deadbabe
+    LEFT CANARY: d1d0   RIGHT CANARY: d1d0
+    data pointer = 0xded0
+    size         = dead
+    capacity     = c0fe
+}
+
+---------------------------------------------------------------------------
+
+---------------------------StackDump---------------------------------------
+Called at stack.cpp at StackStatus StackPush(Stack_t*, Elem_t)(173)
+Stack[0x7ffd5fe42280] <&stk1> at int main() at main.cpp(9)
+Stack status:
+>>>Stack is destructed
+{
+    STACK HASH:  deadbabe    STACK DATA HASH: deadbabe
+    LEFT CANARY: d1d0   RIGHT CANARY: d1d0
+    data pointer = 0xded0
+    size         = dead
+    capacity     = c0fe
+}
+
+---------------------------------------------------------------------------
+---------------------------Started logging---------------------------------
+DATE: 30-09-2022
+TIME: 11:34:58
+
+---------------------------StackDump---------------------------------------
+Called at main.cpp at int main()(10)
+Stack[0x7ffc7af45960] <&stk1> at int main() at main.cpp(9)
+Stack status:
+>>>Stack is OK
+{
+    STACK HASH:  6f4558b9880c70fd    STACK DATA HASH: c2f896ca964dbaab
+    LEFT CANARY: baadf00d   RIGHT CANARY: f00dbaad
+    data pointer = 0x606000000028
+    size         = 0
+    capacity     = 10
+    DATA LEFT CANARY: deadbeef   DATA RIGHT CANARY: beefdead
+    {
+	 [0] = 31415926 (POISON)
+	 [1] = 31415926 (POISON)
+	 [2] = 31415926 (POISON)
+	 [3] = 31415926 (POISON)
+	 [4] = 31415926 (POISON)
+	 [5] = 31415926 (POISON)
+	 [6] = 31415926 (POISON)
+	 [7] = 31415926 (POISON)
+	 [8] = 31415926 (POISON)
+	 [9] = 31415926 (POISON)
+    }
+}
+
+---------------------------------------------------------------------------
+
+---------------------------StackDump---------------------------------------
+Called at main.cpp at int main()(13)
+Stack[0x7ffc7af45960] <&stk1> at int main() at main.cpp(9)
+Stack status:
+>>>Stack is OK
+{
+    STACK HASH:  b5a27a1081546739    STACK DATA HASH: 5cc94ccf0e135f84
+    LEFT CANARY: baadf00d   RIGHT CANARY: f00dbaad
+    data pointer = 0x606000000028
+    size         = 1
+    capacity     = 10
+    DATA LEFT CANARY: deadbeef   DATA RIGHT CANARY: beefdead
+    {
+	*[0] = 228
+	 [1] = 31415926 (POISON)
+	 [2] = 31415926 (POISON)
+	 [3] = 31415926 (POISON)
+	 [4] = 31415926 (POISON)
+	 [5] = 31415926 (POISON)
+	 [6] = 31415926 (POISON)
+	 [7] = 31415926 (POISON)
+	 [8] = 31415926 (POISON)
+	 [9] = 31415926 (POISON)
+    }
+}
+
+---------------------------------------------------------------------------
+
+---------------------------StackDump---------------------------------------
+Called at main.cpp at int main()(19)
+Stack[0x7ffc7af45960] <&stk1> at int main() at main.cpp(9)
+Stack status:
+>>>Stack is OK
+{
+    STACK HASH:  86eb056e86e5a3ff    STACK DATA HASH: 2560e0d85faeda77
+    LEFT CANARY: baadf00d   RIGHT CANARY: f00dbaad
+    data pointer = 0x60f000000048
+    size         = 26
+    capacity     = 40
+    DATA LEFT CANARY: deadbeef   DATA RIGHT CANARY: beefdead
+    {
+	*[0] = 228
+	*[1] = 0
+	*[2] = 1
+	*[3] = 2
+	*[4] = 3
+	*[5] = 4
+	*[6] = 5
+	*[7] = 6
+	*[8] = 7
+	*[9] = 8
+	*[10] = 9
+	*[11] = 10
+	*[12] = 11
+	*[13] = 12
+	*[14] = 13
+	*[15] = 14
+	*[16] = 15
+	*[17] = 16
+	*[18] = 17
+	*[19] = 18
+	*[20] = 19
+	*[21] = 20
+	*[22] = 21
+	*[23] = 22
+	*[24] = 23
+	*[25] = 24
+	 [26] = 31415926 (POISON)
+	 [27] = 31415926 (POISON)
+	 [28] = 31415926 (POISON)
+	 [29] = 31415926 (POISON)
+	 [30] = 31415926 (POISON)
+	 [31] = 31415926 (POISON)
+	 [32] = 31415926 (POISON)
+	 [33] = 31415926 (POISON)
+	 [34] = 31415926 (POISON)
+	 [35] = 31415926 (POISON)
+	 [36] = 31415926 (POISON)
+	 [37] = 31415926 (POISON)
+	 [38] = 31415926 (POISON)
+	 [39] = 31415926 (POISON)
+    }
+}
+
+---------------------------------------------------------------------------
+
+---------------------------StackDump---------------------------------------
+Called at main.cpp at int main()(25)
+Stack[0x7ffc7af45960] <&stk1> at int main() at main.cpp(9)
+Stack status:
+>>>Stack is OK
+{
+    STACK HASH:  930e8eb87e8295ce    STACK DATA HASH: 965d2e77ef940748
+    LEFT CANARY: baadf00d   RIGHT CANARY: f00dbaad
+    data pointer = 0x60f000000048
+    size         = 16
+    capacity     = 40
+    DATA LEFT CANARY: deadbeef   DATA RIGHT CANARY: beefdead
+    {
+	*[0] = 228
+	*[1] = 0
+	*[2] = 1
+	*[3] = 2
+	*[4] = 3
+	*[5] = 4
+	*[6] = 5
+	*[7] = 6
+	*[8] = 7
+	*[9] = 8
+	*[10] = 9
+	*[11] = 10
+	*[12] = 11
+	*[13] = 12
+	*[14] = 13
+	*[15] = 14
+	 [16] = 31415926 (POISON)
+	 [17] = 31415926 (POISON)
+	 [18] = 31415926 (POISON)
+	 [19] = 31415926 (POISON)
+	 [20] = 31415926 (POISON)
+	 [21] = 31415926 (POISON)
+	 [22] = 31415926 (POISON)
+	 [23] = 31415926 (POISON)
+	 [24] = 31415926 (POISON)
+	 [25] = 31415926 (POISON)
+	 [26] = 31415926 (POISON)
+	 [27] = 31415926 (POISON)
+	 [28] = 31415926 (POISON)
+	 [29] = 31415926 (POISON)
+	 [30] = 31415926 (POISON)
+	 [31] = 31415926 (POISON)
+	 [32] = 31415926 (POISON)
+	 [33] = 31415926 (POISON)
+	 [34] = 31415926 (POISON)
+	 [35] = 31415926 (POISON)
+	 [36] = 31415926 (POISON)
+	 [37] = 31415926 (POISON)
+	 [38] = 31415926 (POISON)
+	 [39] = 31415926 (POISON)
+    }
+}
+
+---------------------------------------------------------------------------
+
+---------------------------StackDump---------------------------------------
+Called at main.cpp at int main()(27)
+Stack[0x7ffc7af45960] <&stk1> at int main() at main.cpp(9)
+Stack status:
+>>>Stack is OK
+{
+    STACK HASH:  9405308c5770ff18    STACK DATA HASH: a057ccfebe0e7244
+    LEFT CANARY: baadf00d   RIGHT CANARY: f00dbaad
+    data pointer = 0x6080000000a8
+    size         = 15
+    capacity     = 20
+    DATA LEFT CANARY: deadbeef   DATA RIGHT CANARY: beefdead
+    {
+	*[0] = 228
+	*[1] = 0
+	*[2] = 1
+	*[3] = 2
+	*[4] = 3
+	*[5] = 4
+	*[6] = 5
+	*[7] = 6
+	*[8] = 7
+	*[9] = 8
+	*[10] = 9
+	*[11] = 10
+	*[12] = 11
+	*[13] = 12
+	*[14] = 13
+	 [15] = 31415926 (POISON)
+	 [16] = 31415926 (POISON)
+	 [17] = 31415926 (POISON)
+	 [18] = 31415926 (POISON)
+	 [19] = 31415926 (POISON)
+    }
+}
+
+---------------------------------------------------------------------------
+
+---------------------------StackDump---------------------------------------
+Called at main.cpp at int main()(30)
+Stack[0x7ffc7af45960] <&stk1> at int main() at main.cpp(9)
+Stack status:
+>>>Stack is OK
+{
+    STACK HASH:  e4e154afaa464012    STACK DATA HASH: b6a46494b7e04343
+    LEFT CANARY: baadf00d   RIGHT CANARY: f00dbaad
+    data pointer = 0x6080000000a8
+    size         = 14
+    capacity     = 20
+    DATA LEFT CANARY: deadbeef   DATA RIGHT CANARY: beefdead
+    {
+	*[0] = 228
+	*[1] = 0
+	*[2] = 1
+	*[3] = 2
+	*[4] = 3
+	*[5] = 4
+	*[6] = 5
+	*[7] = 6
+	*[8] = 7
+	*[9] = 8
+	*[10] = 9
+	*[11] = 10
+	*[12] = 11
+	*[13] = 12
+	 [14] = 31415926 (POISON)
+	 [15] = 31415926 (POISON)
+	 [16] = 31415926 (POISON)
+	 [17] = 31415926 (POISON)
+	 [18] = 31415926 (POISON)
+	 [19] = 31415926 (POISON)
+    }
+}
+
+---------------------------------------------------------------------------
+
+---------------------------StackDump---------------------------------------
+Called at main.cpp at int main()(34)
+Stack[0x7ffc7af45960] <&stk1> at int main() at main.cpp(9)
+Stack status:
+		!!!STACK'S DATA IS RUINED!!!
+>>>Stack data's left canary is ruined
+{
+    STACK HASH:  bdfd1f2639097176    STACK DATA HASH: b6a46494b7e04343
+    LEFT CANARY: baadf00d   RIGHT CANARY: f00dbaad
+    data pointer = 0x6080000000a8
+    size         = 14
+    capacity     = 20
+    DATA LEFT CANARY: 316a17   DATA RIGHT CANARY: beefdead
+    {
+	*[0] = 228
+	*[1] = 0
+	*[2] = 1
+	*[3] = 2
+	*[4] = 3
+	*[5] = 4
+	*[6] = 5
+	*[7] = 6
+	*[8] = 7
+	*[9] = 8
+	*[10] = 9
+	*[11] = 10
+	*[12] = 11
+	*[13] = 12
+	 [14] = 31415926 (POISON)
+	 [15] = 31415926 (POISON)
+	 [16] = 31415926 (POISON)
+	 [17] = 31415926 (POISON)
+	 [18] = 31415926 (POISON)
+	 [19] = 31415926 (POISON)
+    }
+}
+
+---------------------------------------------------------------------------
+
+---------------------------StackDump---------------------------------------
+Called at main.cpp at int main()(37)
+Stack[0x7ffc7af45960] <&stk1> at int main() at main.cpp(9)
+Stack status:
+		!!!STACK'S DATA IS RUINED!!!
+>>>Stack's right canary is ruined
+>>>Stack data's left canary is ruined
+>>>Stack's hash is ruined
+{
+    STACK HASH:  ad53b0e9252ce384    STACK DATA HASH: b6a46494b7e04343
+    LEFT CANARY: baadf00d   RIGHT CANARY: 912
+    data pointer = 0x6080000000a8
+    size         = 14
+    capacity     = 20
+    DATA LEFT CANARY: 316a17   DATA RIGHT CANARY: beefdead
+    {
+	*[0] = 228
+	*[1] = 0
+	*[2] = 1
+	*[3] = 2
+	*[4] = 3
+	*[5] = 4
+	*[6] = 5
+	*[7] = 6
+	*[8] = 7
+	*[9] = 8
+	*[10] = 9
+	*[11] = 10
+	*[12] = 11
+	*[13] = 12
+	 [14] = 31415926 (POISON)
+	 [15] = 31415926 (POISON)
+	 [16] = 31415926 (POISON)
+	 [17] = 31415926 (POISON)
+	 [18] = 31415926 (POISON)
+	 [19] = 31415926 (POISON)
+    }
+}
+
+---------------------------------------------------------------------------
+
+---------------------------StackDump---------------------------------------
+Called at main.cpp at int main()(40)
+Stack[0x7ffc7af45960] <&stk1> at int main() at main.cpp(9)
+Stack status:
+>>>Stack is destructed
+{
+    STACK HASH:  deadbabe    STACK DATA HASH: deadbabe
+    LEFT CANARY: d1d0   RIGHT CANARY: d1d0
+    data pointer = 0xded0
+    size         = dead
+    capacity     = c0fe
+}
+
+---------------------------------------------------------------------------
+
+---------------------------StackDump---------------------------------------
+Called at stack.cpp at StackStatus StackPush(Stack_t*, Elem_t)(173)
+Stack[0x7ffc7af45960] <&stk1> at int main() at main.cpp(9)
+Stack status:
+>>>Stack is destructed
+{
+    STACK HASH:  deadbabe    STACK DATA HASH: deadbabe
+    LEFT CANARY: d1d0   RIGHT CANARY: d1d0
+    data pointer = 0xded0
+    size         = dead
+    capacity     = c0fe
+}
+
+---------------------------------------------------------------------------
+---------------------------Started logging---------------------------------
+DATE: 30-09-2022
+TIME: 11:35:22
+
+---------------------------StackDump---------------------------------------
+Called at main.cpp at int main()(10)
+Stack[0x7ffec36aae30] <&stk1> at int main() at main.cpp(9)
+Stack status:
+>>>Stack is OK
+{
+    STACK HASH:  1d4bd18afe31bbaa    STACK DATA HASH: c2f896ca964dbaab
+    LEFT CANARY: baadf00d   RIGHT CANARY: f00dbaad
+    data pointer = 0x606000000028
+    size         = 0
+    capacity     = 10
+    DATA LEFT CANARY: deadbeef   DATA RIGHT CANARY: beefdead
+    {
+	 [0] = 31415926 (POISON)
+	 [1] = 31415926 (POISON)
+	 [2] = 31415926 (POISON)
+	 [3] = 31415926 (POISON)
+	 [4] = 31415926 (POISON)
+	 [5] = 31415926 (POISON)
+	 [6] = 31415926 (POISON)
+	 [7] = 31415926 (POISON)
+	 [8] = 31415926 (POISON)
+	 [9] = 31415926 (POISON)
+    }
+}
+
+---------------------------------------------------------------------------
+
+---------------------------StackDump---------------------------------------
+Called at main.cpp at int main()(13)
+Stack[0x7ffec36aae30] <&stk1> at int main() at main.cpp(9)
+Stack status:
+>>>Stack is OK
+{
+    STACK HASH:  fdcac0e96c67fde1    STACK DATA HASH: 5cc94ccf0e135f84
+    LEFT CANARY: baadf00d   RIGHT CANARY: f00dbaad
+    data pointer = 0x606000000028
+    size         = 1
+    capacity     = 10
+    DATA LEFT CANARY: deadbeef   DATA RIGHT CANARY: beefdead
+    {
+	*[0] = 228
+	 [1] = 31415926 (POISON)
+	 [2] = 31415926 (POISON)
+	 [3] = 31415926 (POISON)
+	 [4] = 31415926 (POISON)
+	 [5] = 31415926 (POISON)
+	 [6] = 31415926 (POISON)
+	 [7] = 31415926 (POISON)
+	 [8] = 31415926 (POISON)
+	 [9] = 31415926 (POISON)
+    }
+}
+
+---------------------------------------------------------------------------
+
+---------------------------StackDump---------------------------------------
+Called at main.cpp at int main()(19)
+Stack[0x7ffec36aae30] <&stk1> at int main() at main.cpp(9)
+Stack status:
+>>>Stack is OK
+{
+    STACK HASH:  eacc36a50bef31b8    STACK DATA HASH: 2560e0d85faeda77
+    LEFT CANARY: baadf00d   RIGHT CANARY: f00dbaad
+    data pointer = 0x60f000000048
+    size         = 26
+    capacity     = 40
+    DATA LEFT CANARY: deadbeef   DATA RIGHT CANARY: beefdead
+    {
+	*[0] = 228
+	*[1] = 0
+	*[2] = 1
+	*[3] = 2
+	*[4] = 3
+	*[5] = 4
+	*[6] = 5
+	*[7] = 6
+	*[8] = 7
+	*[9] = 8
+	*[10] = 9
+	*[11] = 10
+	*[12] = 11
+	*[13] = 12
+	*[14] = 13
+	*[15] = 14
+	*[16] = 15
+	*[17] = 16
+	*[18] = 17
+	*[19] = 18
+	*[20] = 19
+	*[21] = 20
+	*[22] = 21
+	*[23] = 22
+	*[24] = 23
+	*[25] = 24
+	 [26] = 31415926 (POISON)
+	 [27] = 31415926 (POISON)
+	 [28] = 31415926 (POISON)
+	 [29] = 31415926 (POISON)
+	 [30] = 31415926 (POISON)
+	 [31] = 31415926 (POISON)
+	 [32] = 31415926 (POISON)
+	 [33] = 31415926 (POISON)
+	 [34] = 31415926 (POISON)
+	 [35] = 31415926 (POISON)
+	 [36] = 31415926 (POISON)
+	 [37] = 31415926 (POISON)
+	 [38] = 31415926 (POISON)
+	 [39] = 31415926 (POISON)
+    }
+}
+
+---------------------------------------------------------------------------
+
+---------------------------StackDump---------------------------------------
+Called at main.cpp at int main()(25)
+Stack[0x7ffec36aae30] <&stk1> at int main() at main.cpp(9)
+Stack status:
+>>>Stack is OK
+{
+    STACK HASH:  adcb83a3725cd30d    STACK DATA HASH: 965d2e77ef940748
+    LEFT CANARY: baadf00d   RIGHT CANARY: f00dbaad
+    data pointer = 0x60f000000048
+    size         = 16
+    capacity     = 40
+    DATA LEFT CANARY: deadbeef   DATA RIGHT CANARY: beefdead
+    {
+	*[0] = 228
+	*[1] = 0
+	*[2] = 1
+	*[3] = 2
+	*[4] = 3
+	*[5] = 4
+	*[6] = 5
+	*[7] = 6
+	*[8] = 7
+	*[9] = 8
+	*[10] = 9
+	*[11] = 10
+	*[12] = 11
+	*[13] = 12
+	*[14] = 13
+	*[15] = 14
+	 [16] = 31415926 (POISON)
+	 [17] = 31415926 (POISON)
+	 [18] = 31415926 (POISON)
+	 [19] = 31415926 (POISON)
+	 [20] = 31415926 (POISON)
+	 [21] = 31415926 (POISON)
+	 [22] = 31415926 (POISON)
+	 [23] = 31415926 (POISON)
+	 [24] = 31415926 (POISON)
+	 [25] = 31415926 (POISON)
+	 [26] = 31415926 (POISON)
+	 [27] = 31415926 (POISON)
+	 [28] = 31415926 (POISON)
+	 [29] = 31415926 (POISON)
+	 [30] = 31415926 (POISON)
+	 [31] = 31415926 (POISON)
+	 [32] = 31415926 (POISON)
+	 [33] = 31415926 (POISON)
+	 [34] = 31415926 (POISON)
+	 [35] = 31415926 (POISON)
+	 [36] = 31415926 (POISON)
+	 [37] = 31415926 (POISON)
+	 [38] = 31415926 (POISON)
+	 [39] = 31415926 (POISON)
+    }
+}
+
+---------------------------------------------------------------------------
+
+---------------------------StackDump---------------------------------------
+Called at main.cpp at int main()(27)
+Stack[0x7ffec36aae30] <&stk1> at int main() at main.cpp(9)
+Stack status:
+>>>Stack is OK
+{
+    STACK HASH:  54465f7ed5637a96    STACK DATA HASH: a057ccfebe0e7244
+    LEFT CANARY: baadf00d   RIGHT CANARY: f00dbaad
+    data pointer = 0x6080000000a8
+    size         = 15
+    capacity     = 20
+    DATA LEFT CANARY: deadbeef   DATA RIGHT CANARY: beefdead
+    {
+	*[0] = 228
+	*[1] = 0
+	*[2] = 1
+	*[3] = 2
+	*[4] = 3
+	*[5] = 4
+	*[6] = 5
+	*[7] = 6
+	*[8] = 7
+	*[9] = 8
+	*[10] = 9
+	*[11] = 10
+	*[12] = 11
+	*[13] = 12
+	*[14] = 13
+	 [15] = 31415926 (POISON)
+	 [16] = 31415926 (POISON)
+	 [17] = 31415926 (POISON)
+	 [18] = 31415926 (POISON)
+	 [19] = 31415926 (POISON)
+    }
+}
+
+---------------------------------------------------------------------------
+
+---------------------------StackDump---------------------------------------
+Called at main.cpp at int main()(30)
+Stack[0x7ffec36aae30] <&stk1> at int main() at main.cpp(9)
+Stack status:
+>>>Stack is OK
+{
+    STACK HASH:  3282abf7f4869beb    STACK DATA HASH: b6a46494b7e04343
+    LEFT CANARY: baadf00d   RIGHT CANARY: f00dbaad
+    data pointer = 0x6080000000a8
+    size         = 14
+    capacity     = 20
+    DATA LEFT CANARY: deadbeef   DATA RIGHT CANARY: beefdead
+    {
+	*[0] = 228
+	*[1] = 0
+	*[2] = 1
+	*[3] = 2
+	*[4] = 3
+	*[5] = 4
+	*[6] = 5
+	*[7] = 6
+	*[8] = 7
+	*[9] = 8
+	*[10] = 9
+	*[11] = 10
+	*[12] = 11
+	*[13] = 12
+	 [14] = 31415926 (POISON)
+	 [15] = 31415926 (POISON)
+	 [16] = 31415926 (POISON)
+	 [17] = 31415926 (POISON)
+	 [18] = 31415926 (POISON)
+	 [19] = 31415926 (POISON)
+    }
+}
+
+---------------------------------------------------------------------------
+
+---------------------------StackDump---------------------------------------
+Called at main.cpp at int main()(34)
+Stack[0x7ffec36aae30] <&stk1> at int main() at main.cpp(9)
+Stack status:
+		!!!STACK'S DATA IS RUINED!!!
+>>>Stack data's left canary is ruined
+{
+    STACK HASH:  5b1d3629bd409241    STACK DATA HASH: b6a46494b7e04343
+    LEFT CANARY: baadf00d   RIGHT CANARY: f00dbaad
+    data pointer = 0x6080000000a8
+    size         = 14
+    capacity     = 20
+    DATA LEFT CANARY: 316a17   DATA RIGHT CANARY: beefdead
+    {
+	*[0] = 228
+	*[1] = 0
+	*[2] = 1
+	*[3] = 2
+	*[4] = 3
+	*[5] = 4
+	*[6] = 5
+	*[7] = 6
+	*[8] = 7
+	*[9] = 8
+	*[10] = 9
+	*[11] = 10
+	*[12] = 11
+	*[13] = 12
+	 [14] = 31415926 (POISON)
+	 [15] = 31415926 (POISON)
+	 [16] = 31415926 (POISON)
+	 [17] = 31415926 (POISON)
+	 [18] = 31415926 (POISON)
+	 [19] = 31415926 (POISON)
+    }
+}
+
+---------------------------------------------------------------------------
+
+---------------------------StackDump---------------------------------------
+Called at main.cpp at int main()(37)
+Stack[0x7ffec36aae30] <&stk1> at int main() at main.cpp(9)
+Stack status:
+		!!!STACK'S DATA IS RUINED!!!
+>>>Stack's right canary is ruined
+>>>Stack data's left canary is ruined
+>>>Stack's hash is ruined
+{
+    STACK HASH:  11cb6b3eb1075a0e    STACK DATA HASH: b6a46494b7e04343
+    LEFT CANARY: baadf00d   RIGHT CANARY: 912
+    data pointer = 0x6080000000a8
+    size         = 14
+    capacity     = 20
+    DATA LEFT CANARY: 316a17   DATA RIGHT CANARY: beefdead
+    {
+	*[0] = 228
+	*[1] = 0
+	*[2] = 1
+	*[3] = 2
+	*[4] = 3
+	*[5] = 4
+	*[6] = 5
+	*[7] = 6
+	*[8] = 7
+	*[9] = 8
+	*[10] = 9
+	*[11] = 10
+	*[12] = 11
+	*[13] = 12
+	 [14] = 31415926 (POISON)
+	 [15] = 31415926 (POISON)
+	 [16] = 31415926 (POISON)
+	 [17] = 31415926 (POISON)
+	 [18] = 31415926 (POISON)
+	 [19] = 31415926 (POISON)
+    }
+}
+
+---------------------------------------------------------------------------
+
+---------------------------StackDump---------------------------------------
+Called at main.cpp at int main()(40)
+Stack[0x7ffec36aae30] <&stk1> at int main() at main.cpp(9)
+Stack status:
+>>>Stack is destructed
+{
+    STACK HASH:  deadbabe    STACK DATA HASH: deadbabe
+    LEFT CANARY: d1d0   RIGHT CANARY: d1d0
+    data pointer = 0xded0
+    size         = dead
+    capacity     = c0fe
+}
+
+---------------------------------------------------------------------------
+
+---------------------------StackDump---------------------------------------
+Called at stack.cpp at StackStatus StackPush(Stack_t*, Elem_t)(173)
+Stack[0x7ffec36aae30] <&stk1> at int main() at main.cpp(9)
+Stack status:
+>>>Stack is destructed
+{
+    STACK HASH:  deadbabe    STACK DATA HASH: deadbabe
+    LEFT CANARY: d1d0   RIGHT CANARY: d1d0
+    data pointer = 0xded0
+    size         = dead
+    capacity     = c0fe
+}
+
+---------------------------------------------------------------------------
