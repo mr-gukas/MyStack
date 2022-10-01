@@ -30,12 +30,12 @@ Elem_t* StackResize(Stack_t* stk, CapacityMode capMode)
    
     if (capMode == UP)
     {
-        if (stk->capacity != 0 && stk->size < stk->capacity)
+        if (stk->capacity == 0 || stk->size >= stk->capacity)
         {
-            return stk->data;
+            updCapacity  = (stk->capacity == 0) ? BASED_CAPACITY : stk->capacity * 2;
         }
-
-        updCapacity  = (stk->capacity == 0) ? BASED_CAPACITY : stk->capacity * 2;
+        else
+            return stk->data;
     }
     else if (capMode == DOWN)
     {
@@ -59,7 +59,7 @@ Elem_t* StackResize(Stack_t* stk, CapacityMode capMode)
     if (stk->capacity == 0 && capMode == UP)
     {
 #if CANARY_GUARD
-        dataptr = (char*) calloc(1, 2 * sizeof(Canary_t) + updCapacity * sizeof(Elem_t));
+        dataptr = (char*) calloc(1, updCapacity * sizeof(Elem_t) +  2 * sizeof(Canary_t));
 #else
         dataptr = (char*) calloc(1, updCapacity * sizeof(Elem_t));
 #endif
@@ -74,9 +74,9 @@ Elem_t* StackResize(Stack_t* stk, CapacityMode capMode)
     else
     {
 #if CANARY_GUARD
-        dataptr = (char*) realloc((char*) stk->data - sizeof(Canary_t), 2 * sizeof(Canary_t) + updCapacity * sizeof(Elem_t));
+        dataptr = (char*) realloc((char*) stk->data - sizeof(Canary_t), updCapacity * sizeof(Elem_t) +  2 * sizeof(Canary_t));
 #else
-        dataptr = (char*) realloc((char*) stk->data, updCapacity * sizeof(Elem_t));
+        dataptr = (char*) realloc((char*) stk->data,                    updCapacity * sizeof(Elem_t));
 #endif
     }
 
@@ -147,7 +147,7 @@ Stack_t* StackCtorFunc(Stack_t*   stk,                size_t     capacity,      
     capacity = (capacity % BASED_CAPACITY != 0) ? ((capacity / BASED_CAPACITY) + 1) * BASED_CAPACITY : capacity;
     
 #if CANARY_GUARD
-    char* dataptr = (char*) calloc(1, 2 * sizeof(Canary_t) + capacity * sizeof(Elem_t));
+    char* dataptr = (char*) calloc(1, capacity * sizeof(Elem_t) + 2 * sizeof(Canary_t));
 #else
     char* dataptr = (char*) calloc(1, capacity * sizeof(Elem_t));
 #endif
@@ -192,12 +192,14 @@ StackStatus StackDtor(Stack_t* stk)
     if (stk == NULL)
     {   
         StackDump(stk);
+
         return STACK_NULL_PTR;
     }
     
     if (StackIsDestructed(stk) == STACK_IS_DESTRUCTED)
     {
         StackDump(stk);
+
         return STACK_IS_DESTRUCTED;
     }
 
@@ -236,7 +238,7 @@ StackStatus StackPush(Stack_t* stk, Elem_t value)
     
     ASSERT_OK(stk);
     
-    StackResize(stk, UP); // int return value - status
+    StackResize(stk, UP); 
     if (stk->data == NULL)
     {
         StackDump(stk);
@@ -285,7 +287,7 @@ Elem_t StackPop(Stack_t* stk)
     stk->stackHash = SetStackHash(stk);
     stk->dataHash  = SetStackDataHash(stk);
 #else
-    stk->data[stk->size] = (Elem_t) 0;
+    stk->data[stk->size] = 0;
 #endif
 
 #if HASH_GUARD
@@ -468,10 +470,10 @@ int StackVerify(Stack_t* stk)
     if (stk->size > stk->capacity)
         status |= STACK_SIZE_MORE_THAN_CAPACITY | STACK_DATA_IS_RUINED;
 
-#if CANARY_GUARD
     if (stk->data == NULL && stk->capacity > 0)
         status |= STACK_DATA_NULL_PTR;
-    
+
+#if CANARY_GUARD
     if (stk->leftCanary != LEFT_CANARY)
         status |= STACK_LEFT_CANARY_RUINED | STACK_DATA_IS_RUINED;
     
@@ -500,6 +502,7 @@ int StackVerify(Stack_t* stk)
     return status;
 }
 
+#if HASH_GUARD
 size_t HashCalculate(char* key, size_t len)
 {
     size_t hash = 0, index = 0;
@@ -546,6 +549,7 @@ size_t SetStackDataHash(Stack_t* stk)
     }
 
     size_t hash = 0;
+
     if (stk->data != NULL && StackIsDestructed(stk) != STACK_IS_DESTRUCTED && stk->stackHash == SetStackHash(stk))
     {
         hash += HashCalculate((char *) stk->data, stk->capacity * sizeof(Elem_t));
@@ -558,4 +562,4 @@ size_t SetStackDataHash(Stack_t* stk)
         
     return hash;
 }
-
+#endif

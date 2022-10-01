@@ -2,7 +2,7 @@
 
 FILE* startLog(FILE* LogFile)
 {
-    LogFile = fopen(LOG_NAME, "a");
+    LogFile = fopen(LOG_NAME, "w");
     setvbuf (LogFile, NULL, _IONBF, 0);
 
     fprintf(LogFile, "---------------------------Started logging---------------------------------\n");
