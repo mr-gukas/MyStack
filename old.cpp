@@ -336,7 +336,7 @@ void StackDumpFunc(Stack_t* stk, size_t line, const char file[MAX_STR_SIZE], con
         fprintf(LogFile, "\t\t!!!STACK'S DATA IS RUINED!!!\n");
     }
  
-    #define StatPrint_(STATUS, text)      \
+    #define StatPrint_(STATUS, text) \
         if (stk->status & STATUS)          \
         {                                   \
             fprintf(LogFile, #text "\n");    \
@@ -353,6 +353,8 @@ void StackDumpFunc(Stack_t* stk, size_t line, const char file[MAX_STR_SIZE], con
 #if CANARY_GUARD
     StatPrint_(STACK_LEFT_CANARY_RUINED,       >>>Stack left canary is ruined);
     StatPrint_(STACK_RIGHT_CANARY_RUINED,      >>>Stack right canary is ruined);
+    StatPrint_(STACK_DATA_LEFT_CANARY_RUINED,  >>>Stack data left canary is ruined);
+    StatPrint_(STACK_DATA_RIGHT_CANARY_RUINED, >>>Stack data right canary is ruined);
 #endif
 
 #if HASH_GUARD
@@ -388,7 +390,12 @@ void StackDumpFunc(Stack_t* stk, size_t line, const char file[MAX_STR_SIZE], con
         fprintf(LogFile, "    size         = %lu\n", stk->size);
         fprintf(LogFile, "    capacity     = %lu\n", stk->capacity);
 
-       fprintf(LogFile, "    {\n");
+#if CANARY_GUARD
+        fprintf(LogFile, "    DATA LEFT CANARY: %llx   DATA RIGHT CANARY: %llx\n",
+                              *((Canary_t*) ((char*) stk->data - sizeof(Canary_t))), 
+                              *((Canary_t*) ((char*) stk->data + sizeof(Elem_t) * stk->capacity)));
+#endif
+        fprintf(LogFile, "    {\n");
         
         for (size_t index = 0; index < stk->capacity; ++index)
         {
@@ -472,6 +479,12 @@ int StackVerify(Stack_t* stk)
     
     if (stk->rightCanary != RIGHT_CANARY)
         status |= STACK_RIGHT_CANARY_RUINED | STACK_DATA_IS_RUINED;
+    
+    if (*((Canary_t*) ((char*) stk->data - sizeof(Canary_t))) != DATA_LEFT_CANARY)
+        status |= STACK_DATA_LEFT_CANARY_RUINED | STACK_DATA_IS_RUINED;
+    
+    if (*((Canary_t*) ((char*) stk->data + sizeof(Elem_t) * stk->capacity)) != DATA_RIGHT_CANARY)
+        status |= STACK_DATA_RIGHT_CANARY_RUINED | STACK_DATA_IS_RUINED;
 #endif
 
 #if HASH_GUARD
@@ -494,7 +507,7 @@ size_t HashCalculate(char* key, size_t len)
 {
     size_t hash = 0, index = 0;
 
-    for (hash = 0, index = 0; index < len - 1; ++index)
+    for (hash = 0, index = 0; index < len; ++index)
     {
         hash += (size_t) key[index];
         hash += (hash << 10);

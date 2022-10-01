@@ -6,10 +6,10 @@ typedef unsigned long long Canary_t;
 extern FILE* LogFile;
 
 #if CANARY_GUARD
-const Canary_t LEFT_CANARY       = 0xBAADF00D;
-const Canary_t RIGHT_CANARY      = 0xF00DBAAD;
-const Canary_t DATA_LEFT_CANARY  = 0xDEADBEEF;
-const Canary_t DATA_RIGHT_CANARY = 0xBEEFDEAD;
+const Canary_t LEFT_CANARY       = 0xBAADF00DBAADF00D;
+const Canary_t RIGHT_CANARY      = 0xF00DBAADF00DBAAD;
+const Canary_t DATA_LEFT_CANARY  = 0xDEADBEEFDEADBEEF;
+const Canary_t DATA_RIGHT_CANARY = 0xBEEFDEADBEEFDEAD;
 #endif
 
 #if HASH_GUARD
@@ -21,6 +21,6 @@ const size_t   CAPACITY_DESTRUCT = 0xC0FE;
 const Elem_t   POISON            = 31415926;
 const int      DATA_DESTRUCT     = 0xDED0;
 const size_t   MAX_STR_SIZE      = 40;
-const size_t   CANARY_DESTRUCT   = 0xD1D0;
+const Canary_t CANARY_DESTRUCT   = 0xDEADBABADEADBABA;
 const size_t   BASED_CAPACITY    = 10;
 

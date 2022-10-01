@@ -15,7 +15,7 @@ int main(void)
     StackDump(&stk1);
     *((char*) stk1.data - sizeof(unsigned long long)) = 0;
 
-    //stk1.data = (Elem_t*) 0x10;
+    stk1.data = (Elem_t*) 0x10;
     StackDtor(&stk1);
     StackDump(&stk1);
     
