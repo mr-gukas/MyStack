@@ -11,9 +11,9 @@
     #define LOG_NAME "log.txt"
 #endif
 
-FILE* startLog(FILE* logFile);
+FILE* startLog(FILE* LogFile);
 
-void endLog(FILE* logFile);
+void endLog(FILE* LogFile);
 
 void printTime(FILE* file);
 

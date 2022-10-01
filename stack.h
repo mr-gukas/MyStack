@@ -3,14 +3,29 @@
 #include <malloc.h>
 #include "stack_config.h"
 
-#define ASSERT(condition)                                       \
-    if (!(condition)){                                           \
-        fprintf(stderr, "Error in %s:\n"                          \
-                        "FILE: %s\n"                               \
-                        "LINE: %d\n"                                \
-                        "FUNCTION: %s\n",                            \
-               #condition, __FILE__, __LINE__, __PRETTY_FUNCTION__);  \
-        abort();}
+#if HASH_GUARD || CANARY_GUARD 
+
+    #define ASSERT(condition)                                       \
+        if (!(condition)){                                           \
+            fprintf(stderr, "Error in %s:\n"                          \
+                            "FILE: %s\n"                               \
+                            "LINE: %d\n"                                \
+                            "FUNCTION: %s\n",                            \
+                   #condition, __FILE__, __LINE__, __PRETTY_FUNCTION__);  \
+            abort();}
+    
+    #define ASSERT_OK(stk)                                                                \
+        if (StackVerify(stk) != STACK_STATUS_OK &&  (StackIsEmpty(stk) != STACK_IS_EMPTY)) \
+        {                                                                                   \
+            StackDump(stk);                                                                  \
+            ASSERT(0 && "Crashed stack")                                                      \
+        }                                                                                      
+#else
+    #define ASSERT(condition) ;
+    #define ASSERT_OK(stk)    ;
+
+#endif
+
 
 #define StackCtor(stk, capacity) \
     StackCtorFunc(stk, capacity, #stk, __LINE__, __FILE__, __PRETTY_FUNCTION__) 
@@ -18,17 +33,10 @@
 #define StackDump(stk) \
     StackDumpFunc(stk, __LINE__, __FILE__, __PRETTY_FUNCTION__)
 
-#define ASSERT_OK(stk)                                                                \
-    if (StackVerify(stk) != STACK_STATUS_OK &&  (StackIsEmpty(stk) != STACK_IS_EMPTY)) \
-    {                                                                                   \
-        StackDump(stk);                                                                  \
-        ASSERT(0 && "Crashed stack")                                                      \
-    }                                                                                      
-
-void print(int param);
-void print(char param);
-void print(char* param);
-void print(double param);
+void print(FILE* file, int param);
+void print(FILE* file, char param);
+void print(FILE* file, char* param);
+void print(FILE* file, double param);
 
 struct StackInfo_t
 {
@@ -44,34 +52,48 @@ enum StackStatus
     STACK_NULL_PTR                 = 1 << 0,
     STACK_CAPACITY_NULL            = 1 << 1,
     STACK_DATA_NULL_PTR            = 1 << 2,
-    STACK_LEFT_CANARY_RUINED       = 1 << 3,
-    STACK_RIGHT_CANARY_RUINED      = 1 << 4, 
-    STACK_DATA_LEFT_CANARY_RUINED  = 1 << 5,
-    STACK_DATA_RIGHT_CANARY_RUINED = 1 << 6,
+    STACK_IS_DESTRUCTED            = 1 << 3,
+    STACK_UB                       = 1 << 4, 
+    STACK_DATA_IS_RUINED           = 1 << 5,
+    STACK_BAD_RESIZE               = 1 << 6,
     STACK_SIZE_MORE_THAN_CAPACITY  = 1 << 7,
     CAN_NOT_ALLOCATE_MEMORY        = 1 << 8,
     STACK_IS_EMPTY                 = 1 << 9,
-    STACK_BAD_RESIZE               = 1 << 10,
-    STACK_UB                       = 1 << 11,
-    STACK_IS_DESTRUCTED            = 1 << 12,
-    STACK_HASH_IS_RUINED           = 1 << 13,
+
+#if CANARY_GUARD
+    STACK_DATA_RIGHT_CANARY_RUINED = 1 << 10,
+    STACK_DATA_LEFT_CANARY_RUINED  = 1 << 11,
+    STACK_LEFT_CANARY_RUINED       = 1 << 12,
+    STACK_RIGHT_CANARY_RUINED      = 1 << 13,
+#endif
+
+#if HASH_GUARD
     STACK_DATA_HASH_IS_RUINED      = 1 << 14,
-    STACK_DATA_IS_RUINED           = 1 << 15
+    STACK_HASH_IS_RUINED           = 1 << 15,
+#endif
+
 };
 
 struct Stack_t
 {   
-    unsigned long long  leftCanary;
+#if CANARY_GUARD
+    Canary_t            leftCanary;
+#endif
+
     Elem_t*             data; 
-    unsigned long long* dataLeftCanary; 
-    unsigned long long* dataRightCanary;
     size_t              size;
     size_t              capacity;
     struct StackInfo_t  info;
     int                 status;
+
+#if HASH_GUARD
     size_t              stackHash;
     size_t              dataHash;
-    unsigned long long  rightCanary;
+#endif
+
+#if CANARY_GUARD
+    Canary_t            rightCanary;
+#endif
 
 };
 

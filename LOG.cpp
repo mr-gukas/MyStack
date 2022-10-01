@@ -1,14 +1,14 @@
 #include "LOG.h"
 
-FILE* startLog(FILE* logFile)
+FILE* startLog(FILE* LogFile)
 {
-    logFile = fopen(LOG_NAME, "a");
-    setvbuf (logFile, NULL, _IONBF, 0);
+    LogFile = fopen(LOG_NAME, "a");
+    setvbuf (LogFile, NULL, _IONBF, 0);
 
-    fprintf(logFile, "---------------------------Started logging---------------------------------\n");
-    printTime(logFile);
+    fprintf(LogFile, "---------------------------Started logging---------------------------------\n");
+    printTime(LogFile);
 
-    return logFile;
+    return LogFile;
 }
 
 void printTime(FILE* file)
@@ -23,9 +23,9 @@ void printTime(FILE* file)
 
 }
 
-void endLog(FILE* logFile)
+void endLog(FILE* LogFile)
 {
-    fprintf(logFile, "END OF LOG!\n");
-    fclose (logFile);
-    logFile = nullptr;
+    fprintf(LogFile, "END OF LOG!\n");
+    fclose (LogFile);
+    LogFile = nullptr;
 }

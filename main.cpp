@@ -1,7 +1,7 @@
 #include "stack.h"
 
 
-FILE* logFile = startLog(logFile);
+FILE* LogFile = startLog(LogFile);
 
 int main(void)
 {
@@ -29,11 +29,10 @@ int main(void)
     StackPop(&stk1);
     StackDump(&stk1);
 
-    unsigned long long* ptr = stk1.dataLeftCanary;
-    *ptr = 3238423;
+    stk1.rightCanary = 2322;
     StackDump(&stk1);
     
-    stk1.rightCanary = 2322;
+    stk1.data[0] = 1010;
     StackDump(&stk1);
 
     StackDtor(&stk1);
@@ -51,7 +50,7 @@ int main(void)
     StackPush(&stk1, 32);
     StackDump(&stk1);
 
-    endLog(logFile);
+    endLog(LogFile);
     
     return 0;
 }
